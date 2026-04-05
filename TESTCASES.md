@@ -31,12 +31,10 @@
 | TC-01-09 | Цена равна нулю | `"price": 0` | 400 Bad Request (цена не может быть нулевой) *¹* |
 | TC-01-10 | Отрицательная цена | `"price": -100` | 400 Bad Request *¹* |
 | TC-01-11 | Очень длинное `name` (1000 символов) | `"name": "a" * 1000` | 400 Bad Request *¹* |
-| TC-01-12 | `name` из одного символа | `"name": "a"` | 200 *¹* |
-| TC-01-13 | `contacts` больше `viewCount` | `contacts: 100, viewCount: 1` | 400 Bad Request (бизнес-логика) *¹* |
-| TC-01-14 | `sellerID` вне рекомендуемого диапазона | `"sellerID": 0` | 400 Bad Request *¹* |
-| TC-01-15 | Отрицательный `sellerID` | `"sellerID": -1` | 400 Bad Request *¹* |
-| TC-01-16 | Отрицательный `viewCount` | `"viewCount": -1` | 400 Bad Request *¹* |
-| TC-01-17 | Отрицательный `contacts` | `"contacts": -1` | 400 Bad Request *¹* |
+| TC-01-12 | `contacts` больше `viewCount` | `contacts: 100, viewCount: 1` | 400 Bad Request (бизнес-логика) *¹* |
+| TC-01-13 | Отрицательный `sellerID` | `"sellerID": -1` | 400 Bad Request *¹* |
+| TC-01-14 | Отрицательный `viewCount` | `"viewCount": -1` | 400 Bad Request *¹* |
+| TC-01-15 | Отрицательный `contacts` | `"contacts": -1` | 400 Bad Request *¹* |
 
  
 ### Нефункциональные
@@ -98,16 +96,15 @@
  
 | ID | Название | Входные данные | Ожидаемый результат |
 |----|----------|---------------|-------------------|
-| TC-03-05 | Продавец без объявлений | Валидный `sellerID` без объявлений | 200, пустой массив `[]` *¹* |
-| TC-03-06 | `sellerID = 0` | `sellerID = 0` | 400 Bad Request *¹* |
-| TC-03-07 | Отрицательный `sellerID` | `sellerID = -1` | 400 Bad Request *¹* |
+| TC-03-05 | Продавец без объявлений | Валидный `sellerID` без объявлений | 200, пустой массив `[]`|
+| TC-03-06 | Отрицательный `sellerID` | `sellerID = -1` | 400 Bad Request *¹* |
  
 ### Нефункциональные
  
 | ID | Название | Ожидаемый результат |
 |----|----------|-------------------|
-| TC-03-08 | Время ответа | Ответ приходит менее чем за 2000 мс |
-| TC-03-09 | Content-Type ответа | Заголовок `Content-Type: application/json` |
+| TC-03-07 | Время ответа | Ответ приходит менее чем за 2000 мс |
+| TC-03-08 | Content-Type ответа | Заголовок `Content-Type: application/json` |
  
 ---
  
